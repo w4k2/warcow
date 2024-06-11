@@ -1,22 +1,22 @@
 """
-Compare classification accuracy on posts texts with basic classifiers. 
+Classifiying extracted IMG embeddings using GNB paierd with MultioutputClassifier and ClassifierChain
 """
+
 import numpy as np
 from sklearn.model_selection import RepeatedStratifiedKFold
 from sklearn.decomposition import PCA
-from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.neural_network import MLPClassifier
 from sklearn.multioutput import MultiOutputClassifier, ClassifierChain
 import warnings
 from tqdm import tqdm
 
 warnings.filterwarnings('ignore') 
 
-X = np.load("data/texts_embeddings.npy")
-y = np.load("data/txt_y.npy")
+# ft, noft
+data = "noft"
+
+X = np.load("data/multimodal_img_embeddings_%s.npy" % data)
+y = np.load("data/imgs_y.npy")
 
 # Cross-validation
 ydot = 2**np.arange(y.shape[1])[::-1][:, None]
@@ -28,15 +28,14 @@ z[np.in1d(z, oz_labels[z_labels==-1])] = -1
 
 rskf = RepeatedStratifiedKFold(n_repeats=5, n_splits=2, random_state=42)
 
-# Classifiers and estimators
-classifiers = { "GNB": GaussianNB(), 
-                "k-NN": KNeighborsClassifier(), 
-                "CART": DecisionTreeClassifier(random_state=42), 
-                "forest": RandomForestClassifier(random_state=42), 
-                "MLP": MLPClassifier(random_state=42) }
+classifiers = { 
+                "GNB": GaussianNB(), 
+                }
 
-mltlab_est = { "MultioutputClassifier": MultiOutputClassifier, 
-               "ClassifierChain": ClassifierChain }
+mltlab_est = { 
+                "MultioutputClassifier": MultiOutputClassifier, 
+                "ClassifierChain": ClassifierChain 
+               }
 
 for fold, (train, test) in enumerate(rskf.split(z, z)):
     pca = PCA(n_components=.95, random_state=42)
@@ -50,5 +49,5 @@ for fold, (train, test) in enumerate(rskf.split(z, z)):
             est.fit(X_train, y[train])
             y_pred = est.predict(X_test)
 
-            np.save(f"preds/exp_1/test_{fold}_{est_name}_{clf_name}", y[test])
-            np.save(f"preds/exp_1/preds_{fold}_{est_name}_{clf_name}", y_pred)
+            np.save(f"preds/exp_3/test_{data}_{fold}_{est_name}_{clf_name}", y[test])
+            np.save(f"preds/exp_3/preds__{data}_{fold}_{est_name}_{clf_name}", y_pred)

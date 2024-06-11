@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 warnings.filterwarnings('ignore') 
 
-X = np.load("data/texts_embeddings_imgs.npy")
+X = np.load("data/multimodal_img_noft.npy")
 y = np.load("data/imgs_y.npy")
 
 # Cross-validation

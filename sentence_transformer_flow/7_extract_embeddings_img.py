@@ -13,4 +13,4 @@ embeddings = model.encode(texts, device = device, show_progress_bar = True)
 
 print(embeddings.shape)
 
-np.save("data/texts_embeddings_imgs", embeddings)
+np.save("data/multimodal_txt_noft", embeddings)

@@ -42,4 +42,4 @@ for labels_idx, label_set in enumerate(tqdm(labels)):
 binarizer = MultiLabelBinarizer()
 transformed_labels = binarizer.fit_transform(st_y)
 
-np.save("data/st_labels_binarized", transformed_labels)
+np.save("data/txt_y", transformed_labels)
