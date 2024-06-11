@@ -1,0 +1,10 @@
+# Mac OS
+.DS_Store
+
+# Python
+__pycache__/
+
+# Others
+*.npy
+*.model
+*.csv
