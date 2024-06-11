@@ -24,9 +24,12 @@ More information can be found in the preprint article (submitted to the Thirty-e
 Repository contains preprocessing flow and complete classification research. In main directory experiments and scripts for analysis purposes are stored. 
 
 * `utils.py` - additional tools used in experiments
+
 * `exp_1.py` - classification experiment on all texts in the dataset with usage of two multilabel and five basic classifiers
 * `scores_1.py` - based on predictions from `exp_1.py` metrics scores are calculated
 * `anal_1.py` - visualizations of the first experiments results
+
+* `exp_2.py` - classification experiment on texts embeddings for posts which contained images with the classifier which performed the best in first experiment
 
 ### Sentence transformer flow
 
