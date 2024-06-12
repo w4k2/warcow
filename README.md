@@ -1,4 +1,4 @@
-# WarCow dataset
+# WarCov dataset
 
 Dataset from popular social media platform containg posts associated with the subject of COVID-19 pandemic and war in the Ukraine in Polish language. Apart from the texts it also contains images attached to posts and proceduraly generated labels. 
 
