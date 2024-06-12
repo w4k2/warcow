@@ -1,5 +1,5 @@
 """
-Calculate metrics for exp_3. 
+Calculate metrics for exp_4. 
 """
 import numpy as np
 from sklearn.metrics import f1_score
@@ -25,8 +25,8 @@ scores = np.zeros((len(mltlab_est), len(classifiers), 10, 5))
 for est_idx, est_name in enumerate(mltlab_est):
     for clf_idx, clf_name in enumerate(classifiers):
         for fold in range(10):
-            y_true = np.load(f"preds/exp_3/test_{data}_{fold}_{est_name}_{clf_name}.npy")
-            y_pred = np.load(f"preds/exp_3/preds__{data}_{fold}_{est_name}_{clf_name}.npy")
+            y_true = np.load(f"preds/exp_4/test_{data}_{fold}_{est_name}_{clf_name}.npy")
+            y_pred = np.load(f"preds/exp_4/preds__{data}_{fold}_{est_name}_{clf_name}.npy")
             
             scores[est_idx, clf_idx, fold, 0] = f1_score(y_true, y_pred, average="micro")
             scores[est_idx, clf_idx, fold, 1] = f1_score(y_true, y_pred, average="macro")

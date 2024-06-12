@@ -49,5 +49,5 @@ for fold, (train, test) in enumerate(rskf.split(z, z)):
             est.fit(X_train, y[train])
             y_pred = est.predict(X_test)
 
-            np.save(f"preds/exp_3/test_{data}_{fold}_{est_name}_{clf_name}", y[test])
-            np.save(f"preds/exp_3/preds__{data}_{fold}_{est_name}_{clf_name}", y_pred)
+            np.save(f"preds/exp_4/test_{data}_{fold}_{est_name}_{clf_name}", y[test])
+            np.save(f"preds/exp_4/preds__{data}_{fold}_{est_name}_{clf_name}", y_pred)

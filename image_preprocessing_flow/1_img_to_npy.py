@@ -71,4 +71,4 @@ print(imgs_resized.shape)
 
 np.save("../data/imgs_preprocessed.npy", imgs_resized)
 np.save("../data/imgs_y.npy", img_y)
-np.save("../data/multimodal_texts_embeddings.npy", multimodal_texts)
+np.save("../data/multimodal_texts.npy", multimodal_texts)
