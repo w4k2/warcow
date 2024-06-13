@@ -4,7 +4,7 @@ Dataset from popular social media platform containg posts associated with the su
 
 ## Download and usage
 
-Dataset is available to download on XXX. 
+Dataset is available to download on [Kaggle](https://www.kaggle.com/datasets/xehivs/warcov). 
 
 ### Additional representations
 
@@ -53,7 +53,7 @@ Directory `sentence_transformer_flow` contains preprocessing scripts for posts t
 
 * `4_clustering.py` - performs KMeans clustering on representation from `data/st_concatenated.npy` to accumulate hashtags into 50 classification labels; predictions are saved as `data/st_cluster_preds.npy`.
 
-* `5_clusters_to_labels` - file `data/st_labels_row.csv` containing all hashtags (one row corresponds to one post) is used to map posts with new labels obtained from clustering; then labels are encoded to the binarized form with MultiLabelBinarizer and saved as `data/st_labels_binarized.npy`.
+* `5_clusters_to_labels` - file `data/st_labels_row.csv` containing all hashtags (one row corresponds to one post) is used to map posts with new labels obtained from clustering; then labels are encoded to the binarized form with MultiLabelBinarizer and saved as `data/txt_y.npy`
 
 * `6_posts_embeddings.py` - loads `data/extracted_texts.npy` containing NumPy array with all posts (one element is one text) and creates embeddings with Sentence Transformer model; they are saved as `data/texts_embeddings.npy`.
 
