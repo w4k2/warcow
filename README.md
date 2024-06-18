@@ -17,7 +17,7 @@ Dataset is dedicated to use in classification task in three main domains:
 * image classification, 
 * multimodal classification with both representations. 
 
-More information can be found in the preprint article (submitted to the Thirty-eighth Annual Conference on Neural Information Processing Systems - NeurIPS 2024). Available on [arXiv]().
+More information can be found in the preprint article (submitted to the Thirty-eighth Annual Conference on Neural Information Processing Systems - NeurIPS 2024). Available on [arXiv](https://arxiv.org/abs/2406.10255).
 
 ## Repository content
 
@@ -74,6 +74,12 @@ Dataset on license `Attribution-NonCommercial-ShareAlike 4.0 International`. Add
 
 If you use dataset in a publication, we would appreciate citations to the following paper: 
 
-```
-bibtex
+```{bibtex}
+    @misc{borekmarciniec2024warcov,
+        title={WarCov -- Large multilabel and multimodal dataset from social platform}, 
+        author={Weronika Borek-Marciniec and Pawel Zyblewski and Jakub Klikowski and Pawel Ksieniewicz},
+        year={2024},
+        eprint={2406.10255},
+        archivePrefix={arXiv}
+    }
 ```
